@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | LearnHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <header class="quiz-header">
+            <a href="dashboard.html" class="back-btn">← Back</a>
+            <h1 id="quizTitle">JavaScript Quiz</h1>
+            <span class="progress">Question <span id="currentQuestion">1</span>/<span id="totalQuestions">5</span></span>
+        </header>
+
+        <main class="quiz-main">
+            <div class="question-container">
+                <h2 id="questionText">What does 'DOM' stand for?</h2>
+                <div id="optionsContainer" class="options-container">
+                    <!-- Options will be inserted here by JavaScript -->
+                </div>
+            </div>
+
+            <div class="quiz-controls">
+                <button id="nextBtn" class="next-btn hidden">Next</button>
+                <button id="submitBtn" class="submit-btn hidden">Submit Quiz</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>

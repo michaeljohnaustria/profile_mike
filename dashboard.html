@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | LearnHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>LearnHub</h1>
+        <div class="profile-section">
+            <img src="images/profile.png" alt="Profile" class="profile-pic">
+            <div class="profile-dropdown">
+                <span class="username">John</span>
+                <div class="dropdown-content">
+                    <a href="#" id="settingsBtn">Settings</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <section class="welcome-section">
+            <h2>Good morning, <span id="usernameDisplay">John</span>!</h2>
+            <p>Ready to learn something new today?</p>
+        </section>
+
+        <section class="courses-section">
+            <h3>Continue Learning</h3>
+            
+            <div class="course-card" data-course="javascript">
+                <h4>JavaScript Fundamentals</h4>
+                <p>Master the basics of JavaScript programming</p>
+                <div class="course-meta">
+                    <span>12 lessons</span>
+                    <span>4h 20m</span>
+                </div>
+                <div class="quiz-info">
+                    <span class="quiz-result" id="js-result">Your best: 85%</span>
+                    <button class="quiz-btn" data-course="javascript">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="course-card" data-course="python">
+                <h4>Python for Beginners</h4>
+                <p>Learn Python programming from scratch</p>
+                <div class="course-meta">
+                    <span>10 lessons</span>
+                    <span>3h 45m</span>
+                </div>
+                <div class="quiz-info">
+                    <span class="quiz-result" id="python-result">Your best: 30%</span>
+                    <button class="quiz-btn" data-course="python">Start Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="progress-section">
+            <h3>Your Progress</h3>
+            <p>Completed <span id="completedCourses">3</span> of <span id="totalCourses">4</span> courses</p>
+        </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
