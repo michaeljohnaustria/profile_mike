@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | LearnHub</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
     <header class="dashboard-header">
         <h1>LearnHub</h1>
         <div class="profile-section">
-            <img src="images/profile.png" alt="Profile" class="profile-pic">
+            <img src="./image/user.png" alt="Profile" class="profile-pic" id="user-image" style="border: 2px solid #fff;">
             <div class="profile-dropdown">
-                <span class="username">John</span>
+                <span class="usernameDisplay">John</span>
                 <div class="dropdown-content">
-                    <a href="#" id="settingsBtn">Settings</a>
-                    <a href="#" id="logoutBtn">Logout</a>
+                    <a class="d-block" href="settings.html" id="btnSettings">Settings</a>
+                    <a href="#" id="btnLogout">Logout</a>
                 </div>
             </div>
         </div>
@@ -23,19 +24,19 @@
 
     <main class="dashboard-main">
         <section class="welcome-section">
-            <h2>Good morning, <span id="usernameDisplay">John</span>!</h2>
+            <h2>Good morning, <span class="usernameDisplay">John</span>!</h2>
             <p>Ready to learn something new today?</p>
         </section>
 
-        <section class="courses-section">
+        <section class="courses-section" id="courses-section">
             <h3>Continue Learning</h3>
             
             <div class="course-card" data-course="javascript">
                 <h4>JavaScript Fundamentals</h4>
                 <p>Master the basics of JavaScript programming</p>
                 <div class="course-meta">
-                    <span>12 lessons</span>
-                    <span>4h 20m</span>
+                    <span>2 questions</span>
+                    <span>1 min</span>
                 </div>
                 <div class="quiz-info">
                     <span class="quiz-result" id="js-result">Your best: 85%</span>
@@ -47,8 +48,8 @@
                 <h4>Python for Beginners</h4>
                 <p>Learn Python programming from scratch</p>
                 <div class="course-meta">
-                    <span>10 lessons</span>
-                    <span>3h 45m</span>
+                    <span>2 questions</span>
+                    <span>1 min</span>
                 </div>
                 <div class="quiz-info">
                     <span class="quiz-result" id="python-result">Your best: 30%</span>
@@ -59,11 +60,13 @@
 
         <section class="progress-section">
             <h3>Your Progress</h3>
-            <p>Completed <span id="completedCourses">3</span> of <span id="totalCourses">4</span> courses</p>
+            <p>Completed <span id="completedCourses">0</span> of <span id="totalCourses">2</span> courses</p>
         </section>
     </main>
 
-    <script src="js/storage.js"></script>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
 </html>
