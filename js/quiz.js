@@ -52,9 +52,34 @@ const quizzes = {
     }
 };
 
+var timer_per_question = 30;
+const quizCount = Object.keys(quizzes).length;
+let total_timer = timer_per_question * quizCount;
+console.log(total_timer);
+
 let currentQuiz = null;
 let currentQuestionIndex = 0;
 let userAnswers = [];
+
+
+setInterval(function() {
+    timer_per_question--;
+    total_timer--;
+    let timer = document.getElementById('timer');
+    timer.innerText = 'Time Left: ' + timer_per_question;
+    console.log(timer_per_question);
+    if (total_timer == 0) {
+        submitQuiz();
+    }
+
+    if (timer_per_question == 0) {
+        nextQuestion();
+    }
+
+    // how about times 
+}, 1000);
+const USERS_KEY = 'learnhub_users';
+const CURRENT_USER_KEY = 'learnhub_current_user';
 
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -119,10 +144,17 @@ function selectAnswer(index) {
 
 function nextQuestion() {
     currentQuestionIndex++;
+    timer_per_question = 30;
     showQuestion();
 }
 
+function getCurrentUser() {
+    const userJson = localStorage.getItem(CURRENT_USER_KEY);
+    return userJson ? JSON.parse(userJson) : null;
+}
+
 function submitQuiz() {
+    timer_per_question = 30;
     let score = 0;
     currentQuiz.questions.forEach((question, index) => {
         if (userAnswers[index] === question.answer) {
@@ -131,17 +163,37 @@ function submitQuiz() {
     });
     
     // Save results
-    const user = getCurrentUser();
-    if (user) {
-        user.quizResults = user.quizResults || {};
-        user.quizResults[currentQuiz.title.replace(' Quiz', '').toLowerCase()] = {
-            score: Math.round((score / currentQuiz.questions.length) * 100)
+    const urlParams = new URLSearchParams(window.location.search);
+    const course = urlParams.get('course');
+    const quizProgress = JSON.parse(localStorage.getItem('quizProgress')) || {};
+    // checking if the user was already done 
+    if (quizProgress[getCurrentUser().username] && quizProgress[getCurrentUser().username][currentQuiz.title]) {
+        // alert('You have already completed this quiz.');
+        // just update 
+        quizProgress[getCurrentUser().username][course].score = score;
+        quizProgress[getCurrentUser().username][course].total = currentQuiz.questions.length;
+        // return;
+    } else {
+        // alert('You have already completed this quiz.');
+        // just update 
+        quizProgress[getCurrentUser().username] = quizProgress[getCurrentUser().username] || {};
+        quizProgress[getCurrentUser().username][course] = {
+            score: score,
+            total: currentQuiz.questions.length
         };
-        updateUser(user);
-        setCurrentUser(user);
     }
+    localStorage.setItem('quizProgress', JSON.stringify(quizProgress));
+    // const user = getCurrentUser();
+    // if (user) {
+    //     user.quizResults = user.quizResults || {};
+    //     user.quizResults[currentQuiz.title.replace(' Quiz', '').toLowerCase()] = {
+    //         score: Math.round((score / currentQuiz.questions.length) * 100)
+    //     };
+    //     updateUser(user);
+    //     setCurrentUser(user);
+    // }
     
     // Show results
-    alert(`You scored ${score} out of ${currentQuiz.questions.length}`);
+    alert(`You scored ${score} out of ${currentQuiz.questions.length}. Your score is ${Math.round((score / currentQuiz.questions.length) * 100)}%`);
     window.location.href = 'dashboard.html';
 }

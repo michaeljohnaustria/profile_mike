@@ -11,9 +11,12 @@
         <header class="quiz-header">
             <a href="dashboard.html" class="back-btn">← Back</a>
             <h1 id="quizTitle">JavaScript Quiz</h1>
-            <span class="progress">Question <span id="currentQuestion">1</span>/<span id="totalQuestions">5</span></span>
+            <span class="progress">
+                Question <span id="currentQuestion">1</span>/<span id="totalQuestions">5</span>
+            </span>
+            <span id="timer">Time Left: <span id="timerText">30</span></span> <!-- Timer added -->
         </header>
-
+    
         <main class="quiz-main">
             <div class="question-container">
                 <h2 id="questionText">What does 'DOM' stand for?</h2>
@@ -21,7 +24,7 @@
                     <!-- Options will be inserted here by JavaScript -->
                 </div>
             </div>
-
+    
             <div class="quiz-controls">
                 <button id="nextBtn" class="next-btn hidden">Next</button>
                 <button id="submitBtn" class="submit-btn hidden">Submit Quiz</button>
@@ -29,7 +32,7 @@
         </main>
     </div>
 
-    <script src="js/storage.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/quiz.js"></script>
 </body>
 </html>
