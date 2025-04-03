@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basic | LearnHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>LearnHub</h1>
+        <div class="d-flex flex-row">
+            <ul class="d-flex flex-row">
+                    <a class="text-white text-decoration-none p-4 mx-2" style="font-size:25px" href="./dashboard.html">Dashboard</a>
+                    <a class="text-white text-decoration-none p-4 mx-2 fw-bold" style="font-size:25px" href="./blog.html">Blog</a>
+            </ul>
+        </div>
+        <div class="profile-section">
+            <img src="./image/user.png" alt="Profile" class="profile-pic" id="user-image" style="border: 2px solid #fff;">
+            <div class="profile-dropdown">
+                <span class="usernameDisplay fw-bold ml-4" style="font-size:25px">Guest</span>
+                <div class="dropdown-content">
+                    <a class="d-block" href="settings.html" id="btnSettings">Settings</a>
+                    <a href="#" id="btnLogout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <section class="welcome-section">
+            <h2>Good morning, <span class="usernameDisplay">Guest</span>!</h2>
+            <p>Want to something to read today?</p>
+        </section>
+
+        <section class="courses-section" id="courses-section">
+            <article class="course-card">
+                <h3>HTML Structure Essentials</h3>
+                <p>Core document foundation:</p>
+                <ul>
+                    <li>Document declaration: <code>&lt;!DOCTYPE html&gt;</code></li>
+                    <li>Root element: <code>&lt;html&gt;</code> wrapping all content</li>
+                    <li>Head section: <code>&lt;head&gt;</code> containing metadata and title</li>
+                    <li>Visible content: <code>&lt;body&gt;</code> containing display elements</li>
+                </ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Main Heading&lt;/h1&gt;
+        &lt;p&gt;First paragraph content&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </article>
+
+            <article class="course-card">
+                <h3>Content Organization Techniques</h3>
+                <p>Semantic structure elements:</p>
+                <ul>
+                    <li><code>&lt;main&gt;</code> for primary content</li>
+                    <li><code>&lt;header&gt;</code> for introductory content</li>
+                    <li><code>&lt;nav&gt;</code> for navigation links</li>
+                    <li><code>&lt;footer&gt;</code> for closing information</li>
+                </ul>
+<pre><code>&lt;main
+    &lt;header&gt;
+        &lt;h1&gt;Website Header&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;a href="#home"&gt;Home&lt;/a&gt;
+            &lt;a href="#about"&gt;About&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;article&gt;
+        &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+        &lt;p&gt;Article content...&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+</code></pre>
+            </article>
+
+        </section>
+
+        <section class="course-card">
+            <h3>Text Formatting</h3>
+            
+            <div class="feature-item">
+                <!-- <h4>Text Formatting</h4> -->
+<pre><code>&lt;h1&gt;Primary Heading&lt;/h1&gt;
+&lt;h2&gt;Secondary Heading&lt;/h2&gt;
+&lt;p&gt;Regular paragraph text&lt;/p&gt;
+&lt;strong&gt;Bold text&lt;/strong&gt;
+&lt;em&gt;Italicized text&lt;/em&gt;</code></pre>
+            </div>
+        
+            <div class="feature-item">
+                <h4>Semantic Emphasis</h4>
+<pre><code>&lt;p&gt;&lt;mark&gt;Highlighted text&lt;/mark&gt; for importance&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Deleted text&lt;/del&gt; &lt;ins&gt;New addition&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O and x&lt;sup&gt;2&lt;/sup&gt; notation&lt;/p&gt;</code></pre>
+            </div>
+        
+            <div class="feature-item">
+                <h4>Media Elements</h4>
+<pre><code>&lt;img src="image.jpg" alt="Descriptive text" width="300"&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+&lt;/audio&gt;
+&lt;video width="400" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+&lt;/video&gt;</code></pre>
+            </div>
+        
+            <div class="feature-item">
+                <h4>Advanced Formatting</h4>
+<pre><code>&lt;p&gt;&lt;small&gt;Fine print&lt;/small&gt; and &lt;u&gt;underlined terms&lt;/u&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+    &lt;q&gt;This is an inline quote&lt;/q&gt;
+    &lt;cite&gt;- Author Name&lt;/cite&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;Preformatted text with fixed-width&lt;/pre&gt;</code></pre>
+            </div>
+        </section>
+        
+
+
+    </main>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

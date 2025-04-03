@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | LearnHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>LearnHub</h1>
+        <div class="d-flex flex-row">
+            <ul class="d-flex flex-row">
+                    <a class="text-white text-decoration-none p-4 mx-2" style="font-size:25px" href="./dashboard.html">Dashboard</a>
+                    <a class="text-white text-decoration-none p-4 mx-2 fw-bold" style="font-size:25px" href="./blog.html">Blog</a>
+            </ul>
+        </div>
+        <div class="profile-section">
+            <img src="./image/user.png" alt="Profile" class="profile-pic" id="user-image" style="border: 2px solid #fff;">
+            <div class="profile-dropdown">
+                <span class="usernameDisplay fw-bold ml-4" style="font-size:25px">Guest</span>
+                <div class="dropdown-content">
+                    <a class="d-block" href="settings.html" id="btnSettings">Settings</a>
+                    <a href="#" id="btnLogout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <section class="welcome-section">
+            <h2>Good morning, <span class="usernameDisplay">Guest</span>!</h2>
+            <p>Want to something to read today?</p>
+        </section>
+
+        <section class="courses-section" id="courses-section">
+            <h3>Continue Learning</h3>
+            
+            <div class="course-card" data-course="javascript">
+                <h4>HTML Fundamentals</h4>
+                <p>Master the basics of HTML programming</p>
+                <div class="course-meta">
+                    <span class="course-info"></span>
+                </div>
+                <div class="quiz-info d-flex justify-content-end">
+                    <button class="btn btn-primary" onclick="window.location.href='./read_html.html'">View</button>
+                </div>
+            </div>
+
+            <div class="course-card" data-course="python">
+                <h4>Python for Beginners</h4>
+                <p>Learn Python programming from scratch</p>
+                <div class="quiz-info d-flex justify-content-end">
+                    <button class="btn btn-primary" onclick="window.location.href='./read_py.html'">View</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

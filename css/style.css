@@ -73,6 +73,7 @@ body {
     padding: 1rem 2rem;
     background-color: #2c3e50;
     color: white;
+    max-height: 80px;
 }
 
 .profile-section {
@@ -220,4 +221,57 @@ body {
 
 .hidden {
     display: none;
+}
+
+
+.code-visual {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.html-structure {
+    flex: 1;
+    border: 2px solid #e0e0e0;
+    padding: 1rem;
+}
+
+.visual-guide {
+    max-width: 100%;
+    height: auto;
+}
+
+.element-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.element-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+.interactive-demo {
+    margin: 2rem 0;
+    background: #f5f5f5;
+    padding: 1.5rem;
+}
+
+.editor-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#html-editor {
+    width: 100%;
+    height: 150px;
+    padding: 0.5rem;
+}
+
+.preview-pane {
+    border: 1px solid #ccc;
+    padding: 1rem;
 }
