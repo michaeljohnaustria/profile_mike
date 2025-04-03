@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Basic | LearnHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>LearnHub</h1>
+        <div class="row align-center">
+            <ul class="d-flex flex-row">
+                    <a class="text-white text-decoration-none p-4 mx-2" style="font-size:25px" href="./dashboard.html">Dashboard</a>
+                    <a class="text-white text-decoration-none p-4 mx-2 fw-bold" style="font-size:25px" href="./blog.html">Blog</a>
+            </ul>
+        </div>
+        <div class="profile-section align-center">
+            <img src="./image/user.png" alt="Profile" class="profile-pic" id="user-image" style="border: 2px solid #fff;">
+            <div class="profile-dropdown">
+                <span class="usernameDisplay fw-bold ml-4" style="font-size:25px">Guest</span>
+                <div class="dropdown-content">
+                    <a class="d-block" href="settings.html" id="btnSettings">Settings</a>
+                    <a href="#" id="btnLogout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <section class="welcome-section">
+            <h2>Good morning, <span class="usernameDisplay">Guest</span>!</h2>
+            <p>Want to something to read today?</p>
+        </section>
+
+        <section class="courses-section" id="courses-section">
+            <article class="course-card">
+                <h3>Python Basics</h3>
+                <p>Core Python concepts:</p>
+                <ul>
+                    <li>Variables and Data Types</li>
+                    <li>Control Flow (if-else, loops)</li>
+                    <li>Functions and Modules</li>
+                    <li>Object-Oriented Programming</li>
+                </ul>
+            
+                <h5>Example:</h5>
+                <ul>
+                    <pre><code>
+# Print a message
+print("Hello, Python!")
+
+# Variables and data types
+name = "Alice"
+age = 25
+is_student = True
+
+# Conditional statement
+if age > 18:
+    print(f"{name} is an adult.")
+
+# Loop example
+for i in range(5):
+    print(f"Count: {i}")
+
+# Function example
+def greet(person):
+    return f"Hello, {person}!"
+
+print(greet(name))
+                    </code></pre>
+                </ul>
+            </article>
+
+            <article class="course-card">
+                <h3>Python Code Organization Techniques</h3>
+                <p>Best practices for organizing Python code:</p>
+                <ul>
+                    <li>Use functions to encapsulate reusable logic</li>
+                    <li>Organize related functions and classes into modules</li>
+                    <li>Group related modules into packages</li>
+                    <li>Follow PEP 8 for consistent code style</li>
+                </ul>
+            <pre><code>
+# Example of organized Python code
+
+# utils.py (module)
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+# main.py
+from utils import add, subtract
+
+def main():
+    x = 10
+    y = 5
+    print(f"Sum: {add(x, y)}")
+    print(f"Difference: {subtract(x, y)}")
+
+if __name__ == "__main__":
+    main()
+            </code></pre>
+            </article>
+
+        </section>
+
+         <section class="course-card">
+            <h3>Python String Formatting</h3>
+            
+            <div class="feature-item">
+                <h4>Basic String Formatting</h4>
+        <pre><code>
+# Using f-strings (Python 3.6+)
+name = "Alice"
+age = 25
+print(f"My name is {name} and I am {age} years old.")
+
+# Using str.format()
+print("My name is {} and I am {} years old.".format(name, age))
+
+# Using % formatting
+print("My name is %s and I am %d years old." % (name, age))
+        </code></pre>
+            </div>
+            
+            <div class="feature-item">
+                <h4>Text Manipulation</h4>
+        <pre><code>
+# Changing case
+text = "Hello, Python!"
+print(text.upper())  # HELLO, PYTHON!
+print(text.lower())  # hello, python!
+print(text.title())  # Hello, Python!
+
+# Stripping whitespace
+whitespace_text = "   Learn Python   "
+print(whitespace_text.strip())  # "Learn Python"
+
+# Replacing text
+print(text.replace("Python", "World"))  # Hello, World!
+        </code></pre>
+            </div>
+            
+            <div class="feature-item">
+                <h4>Working with Multiline Strings</h4>
+        <pre><code>
+# Multiline string
+multiline = """This is a
+multiline string in Python."""
+print(multiline)
+
+# Joining and splitting strings
+words = ["Learn", "Python", "Basics"]
+print(" ".join(words))  # Learn Python Basics
+print("Learn-Python-Basics".split("-"))  # ['Learn', 'Python', 'Basics']
+        </code></pre>
+            </div>
+            
+            <div class="feature-item">
+                <h4>Advanced String Formatting</h4>
+        <pre><code>
+# Padding and alignment
+print(f"{'Python':<10} is fun!")  # Left-aligned
+print(f"{'Python':>10} is fun!")  # Right-aligned
+print(f"{'Python':^10} is fun!")  # Center-aligned
+
+# Formatting numbers
+number = 1234.56789
+print(f"{number:.2f}")  # 1234.57 (2 decimal places)
+print(f"{number:,.2f}")  # 1,234.57 (comma as thousand separator)
+        </code></pre>
+            </div>
+        </section>
+        
+
+
+    </main>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
